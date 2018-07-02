@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-sm">
+        <h3>Teams</h3>
+        <div class="form-group">
+            {{input value=searchString placeholder="Search team by name" class="form-control" key-up="search"}}
+        </div>
+        {{team-list teams=teams}}
+    </div>
+    <div class="col-lg">
+        {{outlet}}
+    </div>
+</div>

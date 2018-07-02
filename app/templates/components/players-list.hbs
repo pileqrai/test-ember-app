@@ -1,0 +1,26 @@
+<ul class="list-group">
+    {{#each players as |player|}}
+        <li class="list-group-item">
+                {{#unless player.isDeleted}}
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">First and last name</span>
+                </div>
+                {{input type="text" value=player.firstName placeholder="First Name" class="form-control"}}
+                {{input type="text" value=player.lastName placeholder="Last Name" class="form-control"}}
+                    <div class="input-group-append">
+                        {{#if player.hasDirtyAttributes}}
+                            <button class="btn btn-outline-primary" type="button" {{action 'save' player}}>Save</button>
+                            <button class="btn btn-outline-secondary" type="button" {{action 'cancel' player}}>Cancel</button>
+                        {{/if}}
+                        <button class="btn btn-outline-danger" type="button" {{action 'delete' player}}>Delete</button>
+                    </div>
+            </div>
+                {{else}}
+                    <div class="text-muted text-center">
+                        Deleting {{player.displayName}}
+                    </div>
+                {{/unless}}
+        </li>
+    {{/each}}
+</ul>

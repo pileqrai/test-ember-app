@@ -1,0 +1,13 @@
+.team-list {
+  li {
+    .actions {
+      visibility: hidden;
+    }
+
+    &:hover {
+      .actions {
+        visibility: visible;
+      }
+    }
+  }
+}

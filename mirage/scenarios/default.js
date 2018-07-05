@@ -12,9 +12,7 @@ export default function(server) {
         const players = server.createList('player', 5);
         team.players = players;
         team.save();
-    })
-
-    console.error('teams', teams);
+    });
 
     return server;
 }

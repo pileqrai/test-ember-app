@@ -27,7 +27,6 @@ export default function() {
     this.timing = 500;
 
     this.get('/teams', (schema, request) => {
-        console.error('request', request);
         return request.queryParams.name ? schema.teams.where((team) =>
                 team.name.toLowerCase().includes(request.queryParams.name))
             : schema.teams.all();
